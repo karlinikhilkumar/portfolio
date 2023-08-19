@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>my portfolio</title>
+   <style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    color: #fff;
+}
+body{
+    background:#101010;
+}#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url("IMG_4493.JPG");
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 10px 10% ;
+   
+    position: sticky;
+}
+.body-text{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+   
+}
+.logo{
+    width: 150px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 10px 10px 10px;
+   
+    text-decoration: none;
+    border: none;
+    
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #f7c331;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+
+    
+    
+}
+nav ul li a:hover::after{
+    width: 100%;
+    transform: scaleX(1  );
+}
+.body-tex{
+    margin-top: 20px;
+    font-size: 35px;
+}
+.body-text h1{
+    font-size: 50px;
+    margin-top: 20px;
+}
+.body-text h1 span{
+    color:#f7c331;
+    text-decoration: underline;
+
+}
+#na span{
+    font-size: large;
+    color: #007acc;
+}
+/* about */
+ #about{
+  padding: 80px 0;
+  color: #ababab;
+ }  
+ .row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap ;
+    border-radius: 10px;
+    
+ }
+ .about-col-1{ 
+    flex-basis: 40%; 
+ }
+ .about-col-1 img{
+    width: 100%;
+    border-radius: 10px;
+     
+ }
+.about-col-2 {
+    flex-basis:55% ;
+}
+.subtitle{
+    font-size:60px ;
+    font-weight: 500;
+    color: #fff;
+    
+     
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0px 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: point;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #007acc;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+ 
+ 
+}
+.tab-links.active-link::after{
+    width: 50%;
+
+}
+.tab-contents ul li{
+    list-style-type: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+   color: #007acc;
+}
+.tab-contents{
+    display: none;  
+}
+.tab-contents.active-tab{
+    display: block; 
+}
+#services{
+    padding: 30px 0;
+    background: ;
+   
+}
+.services-list{
+    display: flex;
+    flex-direction: row;
+  
+    grid-gap:50px;
+    margin-top: 30px;
+
+}
+.services-list div{
+   background-color:#262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: background-color 0.5s,transform 0.5s;
+
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+.services-list div h2{
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 16px;
+
+}
+.services-list div a{
+   color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 20px;
+    display: inline-block;
+    
+}
+.services-list div:hover{
+    background-color: #007acc;
+    transform: translateX(-10px);
+
+}
+.work-list{
+    display: flex;
+    flex-direction: row;
+    grid-gap:50px;
+    margin-top: 30px;
+
+
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+
+}
+.work img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s; /used for tranforming imge when ever we hover on to it/
+}
+.layer{
+    width: 100%;
+    height: 0;
+    
+    background: linear-gradient(rgba(0,0,0,0.6),#a17806);
+    position: absolute;  /*   this makes text one the image*/
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* used to make  h3 p nd a contents in a row*/ 
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+      
+    
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+
+}
+.layer a {
+    margin-top: 20px;
+    color-scheme: red;
+   
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 50px;
+   
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+
+   
+
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+   
+    height: 100%;
+} 
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #a17806;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+   color: #fff;
+   transition: background 0.5s;
+}
+.btn:hover{
+    background: #f7c331;
+}
+.btn0{
+   
+    margin-left: 150px;
+    width: fit-content;
+    border: 1px solid #a17806;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color:#fff;
+    font-weight: 20px;
+    background-color: #a17806;
+   
+}
+.btn3{
+    
+    width: fit-content;
+    border: 1px solid #a17806;
+    padding: 10px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    color:#fff;
+    font-weight: 20px;
+    background-color: #a17806;
+   
+
+}
+
+/* contact */
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p i{
+    font-size: 30px;
+    margin-right: 20px;
+    color: #f7c331;
+    
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+   
+    display: inline-block;
+    transition: transform 0.5s;
+
+}
+.social-icons a:hover{
+    color: #f7c331;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #f7c331;
+}
+.contact-right form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer
+    ;
+}
+.bottom{
+    background: #262626;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+
+}
+.bottom1{
+    font-size: 20px;
+}
+   /* css for small screen */
+   nav .fas{
+    display: none;
+   }
+   @media only screen and (max-width:600px){
+    #header{
+        background-image:url();
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav ul{
+        background: #f7c331;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }    
+
+    
+   }
+   </style>
+    <script src="https://kit.fontawesome.com/f4c2e68b36.js" crossorigin="anonymous"></script>
+   
+  </head>
+  <body>
+   <div id="body">
+    <div class="container">
+        <nav>
+          <i class="fa-solid fa-user" id="na"> <span> N K</span></i>
+            <ul >
+                <li><a href="#">home</a></li>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="#">contact us</a></li>
+            </ul>
+           
+        </nav><br><br>
+       
+    </div>
+    <div class="body-text">
+      <p>FULL STACK WEB DEVELOPER</p>
+      <h1>Hello!I'am<br> <span>k nikhil kumar</span> <br> </h1><br><br>
+      <P>I'm learning Web Development with Career X pursuing <br><br> Electronics and communication Engineering from CMRTC</P>
+    </div>
+    <br>
+   
+    <button class="btn0" > hire me </button>
+  
+   </div>
+   <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="WhatsApp Image 2023-07-22 at 12.00.18.jpg" alt="">
+        </div>
+        
+        <div class="about-col-2">
+          <h1 class="subtitle"> <b>about me</b></h1> <br>
+          <p> my name is nikhil kumar .iam from mahabubanagar .i have done my btech in CMR Technical campus hyderabad with specialization in electronics and commutional engineering with an agreegation of 6.2CGPA.
+            along with my degree i also learnt from programming languages like c and python <br> current developng skills on full stack java development in careeerx
+          </p>
+          
+        
+        </div>
+       
+      </div>
+    </div>
+   
+    
+    </div>
+ </div>
+ <!-- ---services-- -->
+ <div id="services">
+  <div class="container">
+    <h1 class="sub-title">My skills</h1>
+    <div class="services-list">
+      <div>
+        <i class="fa-brands fa-js"></i>
+       
+        <h2>web  designing</h2>
+      <p>Learing Web Development Career X Having A Good Grip On HTML,CSS And JAVA-SCRIPT</p>
+        <a href="#">learn more</a>
+      </div>
+     
+      <div>
+        <i class="fa-solid fa-code"></i>
+       
+        <h2>coding </h2>
+      <p>Having A Knowledge About Coding Languages Such C, Python And Java</p>
+        <a href="#">learn more</a>
+      </div>
+
+    </div>
+  </div>
+ </div>
+ <!-- //---portfolio--// -->
+ <div id="portfolio">
+  
+  <div class="container">
+    <h1 class="sub-title"> my work</h1>
+   
+    <div class="work-list">
+     
+      <div class="work">
+        <img src="Firefly show mobile showing 6g network 61705.jpg" alt="">
+        <div class="layer">
+          <h3>6g wireless network</h3>
+          <p>its a advanced technology after 5g which makes <br> speakers as well as receiver distortion less</p>
+          <a href="#"><i class="fa-solid fa-link"></i></a>
+        </div>
+      
+      </div>
+       <div class="work">
+        <img src="Firefly noise cancellation art showing in mobile 58150.jpg" alt="">
+        <div class="layer">
+          <h3>Noise reduction and echo cancellation</h3>
+          <p>it helps to reduce the noise and<br> echo willl be eliminated</p>
+          <a href="#"><i class="fa-solid fa-link"></i></a>
+        </div>
+    
+      </div>
+     
+    </div>
+    <a href="#" class="btn">see more</a>
+  </div>
+
+ </div>
+ <!-- contact form -->
+ <div class="contact">
+  <div class="container">
+  <div class="row">
+    <div class="contact-left">
+       <h1 class="sub-title">contact <span>me!</span></h1><br><br>
+       <p><i class="fa-solid fa-envelope"></i>nikhlkumr@gmail.com</p><br>
+       <p><i class="fa-solid fa-phone"></i>6304678851</p><br>
+          <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+
+        <a href="#" download class="btn btn2">download cv</a>
+      </div>
+      <div class="contact-right">
+        <form >
+          <input type="text name" name="namme" placeholder="enter your name" required> <br>
+          <input type="text" name="email" placeholder="enter your email id" required> <br>
+          <textarea name="message" id="msg" cols="30" rows="10"></textarea><br>
+          <button type="submit" style="color: black;" class="btn btn2">submit</button>
+        </form>
+      </div>
+   </div>
+      </div>
+      <div class="bottom">
+        <h1 class="bottom1"> thank you! for visiting have a great  day <i class="fa-regular fa-face-smile" class="emoji"></i> </h1>
+      </div>
+      
+  </div>
+ 
+ </div>
+ 
+  
+  </body>
+  
+</htm >
